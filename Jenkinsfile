@@ -27,11 +27,11 @@ node {
 
             cd ${appDir}
 
-            npm install
-            npm run build
-
-            # Stop previous instance running on port 3000
-            sudo fuser -k 3000/tcp || true
+            cd ${appDir}
+            sudo npm install
+          sudo npm run build
+           sudo fuser -k 3000/tcp || true
+            npm run start
 
             # Start the app (recommended with PM2)
             sudo npx pm2 start npm --name next-app -- run start
