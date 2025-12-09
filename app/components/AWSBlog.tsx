@@ -1228,7 +1228,7 @@ const AWSBlog: React.FC = () => {
                   { cmd: "chown user:group file", desc: "Change file owner" },
                   { cmd: "whoami", desc: "Current user" },
                   { cmd: "useradd username", desc: "Create new user" },
-                  { cmd: "userdel username", desc: "Delete user" },
+                  { cmd: "userdel name", desc: "Delete user" },
                   { cmd: "passwd username", desc: "Change user password" },
                   { cmd: "sudo visudo", desc: "Edit sudo permissions" },
                 ],
