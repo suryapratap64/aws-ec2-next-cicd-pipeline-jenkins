@@ -33,8 +33,6 @@ node {
            sudo fuser -k 3000/tcp || true
             npm run start
 
-            # Start the app (recommended with PM2)
-            sudo npx pm2 start npm --name next-app -- run start
         """
     }
 }
