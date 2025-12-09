@@ -1160,6 +1160,167 @@ const AWSBlog: React.FC = () => {
           </div>
         </div>
 
+        {/* Linux Commands Guide */}
+        <div className="bg-gradient-to-br from-blue-900 to-blue-800 border border-blue-700 rounded-lg p-8 mb-12">
+          <h2 className="text-3xl font-bold text-blue-100 mb-6">
+            Essential Linux Commands for DevOps & AWS
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                category: "File & Directory Management",
+                commands: [
+                  { cmd: "ls -la", desc: "List all files with details" },
+                  { cmd: "cd /path", desc: "Change directory" },
+                  { cmd: "pwd", desc: "Print working directory" },
+                  { cmd: "mkdir folder", desc: "Create directory" },
+                  { cmd: "rm -rf folder", desc: "Remove directory recursively" },
+                  { cmd: "cp -r src dest", desc: "Copy files recursively" },
+                  { cmd: "mv old new", desc: "Move or rename files" },
+                  { cmd: "touch file.txt", desc: "Create empty file" },
+                ],
+              },
+              {
+                category: "File Content & Search",
+                commands: [
+                  { cmd: "cat file.txt", desc: "Display file contents" },
+                  { cmd: "grep 'text' file", desc: "Search for text in file" },
+                  { cmd: "find . -name '*.js'", desc: "Find files by name" },
+                  { cmd: "sed 's/old/new/'", desc: "Stream editor for text" },
+                  { cmd: "awk '{print $1}'", desc: "Text processing tool" },
+                  { cmd: "tail -f log.txt", desc: "Follow file updates" },
+                  { cmd: "head -20 file", desc: "Show first 20 lines" },
+                  { cmd: "wc -l file", desc: "Count lines in file" },
+                ],
+              },
+              {
+                category: "System & Process Management",
+                commands: [
+                  { cmd: "ps aux", desc: "List all running processes" },
+                  { cmd: "kill -9 PID", desc: "Force kill process by ID" },
+                  { cmd: "top", desc: "Real-time process monitor" },
+                  { cmd: "df -h", desc: "Disk space usage" },
+                  { cmd: "du -sh folder", desc: "Directory size" },
+                  { cmd: "free -h", desc: "Memory usage" },
+                  { cmd: "uptime", desc: "System uptime info" },
+                  { cmd: "systemctl status service", desc: "Check service status" },
+                ],
+              },
+              {
+                category: "Network & Connectivity",
+                commands: [
+                  { cmd: "ping host", desc: "Test connectivity to host" },
+                  { cmd: "ifconfig", desc: "Network interface config" },
+                  { cmd: "netstat -tulpn", desc: "List network connections" },
+                  { cmd: "ss -tulpn", desc: "Socket statistics" },
+                  { cmd: "curl http://url", desc: "Make HTTP requests" },
+                  { cmd: "wget url", desc: "Download files" },
+                  { cmd: "scp user@host:file .", desc: "Secure file copy" },
+                  { cmd: "ssh user@host", desc: "Secure shell access" },
+                ],
+              },
+              {
+                category: "User & Permission Management",
+                commands: [
+                  { cmd: "sudo command", desc: "Execute with root privilege" },
+                  { cmd: "chmod 755 file", desc: "Change file permissions" },
+                  { cmd: "chown user:group file", desc: "Change file owner" },
+                  { cmd: "whoami", desc: "Current user" },
+                  { cmd: "useradd username", desc: "Create new user" },
+                  { cmd: "userdel username", desc: "Delete user" },
+                  { cmd: "passwd username", desc: "Change user password" },
+                  { cmd: "sudo visudo", desc: "Edit sudo permissions" },
+                ],
+              },
+              {
+                category: "Package & Software Management",
+                commands: [
+                  { cmd: "apt-get update", desc: "Update package list (Debian)" },
+                  { cmd: "apt-get install pkg", desc: "Install package (Debian)" },
+                  { cmd: "yum install pkg", desc: "Install package (RedHat)" },
+                  { cmd: "apt-get remove pkg", desc: "Remove package (Debian)" },
+                  { cmd: "apt-cache search pkg", desc: "Search packages" },
+                  { cmd: "dpkg -l", desc: "List installed packages" },
+                  { cmd: "pip install package", desc: "Install Python package" },
+                  { cmd: "npm install pkg", desc: "Install Node.js package" },
+                ],
+              },
+              {
+                category: "Git Commands",
+                commands: [
+                  { cmd: "git clone url", desc: "Clone repository" },
+                  { cmd: "git add .", desc: "Stage all changes" },
+                  { cmd: "git commit -m 'msg'", desc: "Commit changes" },
+                  { cmd: "git push origin main", desc: "Push to remote" },
+                  { cmd: "git pull origin main", desc: "Pull from remote" },
+                  { cmd: "git branch", desc: "List branches" },
+                  { cmd: "git checkout -b branch", desc: "Create new branch" },
+                  { cmd: "git log --oneline", desc: "View commit history" },
+                ],
+              },
+              {
+                category: "Docker Commands",
+                commands: [
+                  { cmd: "docker ps", desc: "List running containers" },
+                  { cmd: "docker ps -a", desc: "List all containers" },
+                  { cmd: "docker build -t image .", desc: "Build Docker image" },
+                  { cmd: "docker run -d image", desc: "Run container detached" },
+                  { cmd: "docker logs container", desc: "View container logs" },
+                  { cmd: "docker exec -it container bash", desc: "Enter container" },
+                  { cmd: "docker stop container", desc: "Stop container" },
+                  { cmd: "docker rm container", desc: "Remove container" },
+                ],
+              },
+            ].map((section, idx) => (
+              <div
+                key={idx}
+                className="bg-black bg-opacity-40 rounded-lg p-6 border border-blue-700"
+              >
+                <h3 className="text-xl font-bold text-blue-300 mb-4">
+                  {section.category}
+                </h3>
+                <ul className="space-y-3">
+                  {section.commands.map((item, cidx) => (
+                    <li key={cidx} className="text-sm">
+                      <p className="font-mono bg-black bg-opacity-60 text-green-400 p-2 rounded mb-1">
+                        $ {item.cmd}
+                      </p>
+                      <p className="text-blue-100 text-xs">{item.desc}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 bg-black bg-opacity-40 rounded-lg p-6 border border-blue-700">
+            <h3 className="text-xl font-bold text-blue-300 mb-4">Quick Tips</h3>
+            <ul className="space-y-2">
+              <li className="flex gap-2 text-blue-100">
+                <span className="text-blue-400">•</span>
+                <span>Use <code className="bg-black bg-opacity-60 px-2 py-1 rounded text-green-400 text-xs">man command</code> to view manual pages</span>
+              </li>
+              <li className="flex gap-2 text-blue-100">
+                <span className="text-blue-400">•</span>
+                <span>Use <code className="bg-black bg-opacity-60 px-2 py-1 rounded text-green-400 text-xs">history</code> to see previous commands</span>
+              </li>
+              <li className="flex gap-2 text-blue-100">
+                <span className="text-blue-400">•</span>
+                <span>Use <code className="bg-black bg-opacity-60 px-2 py-1 rounded text-green-400 text-xs">ctrl+c</code> to interrupt running processes</span>
+              </li>
+              <li className="flex gap-2 text-blue-100">
+                <span className="text-blue-400">•</span>
+                <span>Use <code className="bg-black bg-opacity-60 px-2 py-1 rounded text-green-400 text-xs">|</code> (pipe) to chain commands together</span>
+              </li>
+              <li className="flex gap-2 text-blue-100">
+                <span className="text-blue-400">•</span>
+                <span>Use <code className="bg-black bg-opacity-60 px-2 py-1 rounded text-green-400 text-xs">></code> to redirect output to file</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
         {/* Footer CTA */}
         <div className="bg-gray-800 border border-gray-700 rounded-lg p-8 text-center mb-8">
           <h2 className="text-3xl font-bold mb-4">Start Your AWS Journey</h2>
