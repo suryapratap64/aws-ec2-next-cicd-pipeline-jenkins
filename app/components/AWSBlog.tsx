@@ -1315,7 +1315,7 @@ const AWSBlog: React.FC = () => {
               </li>
               <li className="flex gap-2 text-blue-100">
                 <span className="text-blue-400">•</span>
-                <span>Use <code className="bg-black bg-opacity-60 px-2 py-1 rounded text-green-400 text-xs">></code> to redirect output to file</span>
+                <span>Use <code className="bg-black bg-opacity-60 px-2 py-1 rounded text-green-400 text-xs"></code> to redirect output to file</span>
               </li>
             </ul>
           </div>
