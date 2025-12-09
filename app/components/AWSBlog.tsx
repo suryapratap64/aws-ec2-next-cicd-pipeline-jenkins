@@ -79,7 +79,7 @@ const AWSBlog: React.FC = () => {
       category: "Compute",
       icon: <Server className="w-6 h-6" />,
       shortDesc: "Elastic Compute Cloud - Virtual servers in AWS",
-      fullDesc: `Amazon EC2 provides scalable computing capacity in the AWS cloud. It allows you to launch virtual machines (instances) with different configurations. EC2 instances can run Windows, Linux, or other operating systems. You pay only for what you use with various pricing options including On-Demand, Reserved Instances, and Spot Instances.`,
+      fullDesc: `Amazon EC2 provides scalable computing capacity in the AWS cloud. It allows you to launch virtual machines (instances) with different types configurations. EC2 instances can run Windows, Linux, or other operating systems. You pay only for what you use with various pricing options including On-Demand, Reserved Instances, and Spot Instances.`,
       useCases: [
         "Web hosting and application servers",
         "High-performance computing (HPC)",
