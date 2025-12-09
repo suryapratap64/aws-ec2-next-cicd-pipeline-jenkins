@@ -137,7 +137,7 @@ const AWSBlog: React.FC = () => {
       category: "Compute",
       icon: <Container className="w-6 h-6" />,
       shortDesc: "Elastic hi Container Service - Docker container orchestration",
-      fullDesc: `Amazon ECS is a fully managed container orchestration service that makes it easy to deploy, manage, and scale Docker containers. ECS can be used with AWS Fargate (serverless) or EC2 instances. Integrates with ALB/NLB for load balancing and CloudWatch for monitoring.`,
+      fullDesc: `Amazon ECS is a fully managed container orchestration service that makes it easy to deploy, manage, and scale Docker containers. ECS can  used with AWS Fargate (serverless) or EC2 instances. Integrates with ALB/NLB for load balancing and CloudWatch for monitoring.`,
       useCases: [
         "Microservices architecture",
         "Containerized web applications",
